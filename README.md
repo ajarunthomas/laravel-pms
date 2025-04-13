@@ -5,8 +5,10 @@
 
 ### Database Migration
 
+```
 php artisan migrate
 php artisan db:seed
+```
 
 ### Product Management System API endpoints
 
