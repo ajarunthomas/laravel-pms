@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "4665cad7-1109-41a2-86c6-e214ebd02bf7",
+		"name": "Laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38449788"
+	},
+	"item": [
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"items\": [\n        {\n            \"product_id\": 1,\n            \"total_price\": 10,\n            \"total_quantity\": 1\n        },\n        {\n            \"product_id\": 51,\n            \"total_price\": 5,\n            \"total_quantity\": 1\n        }\n    ]   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_base_url}}/api/orders",
+							"host": [
+								"{{api_base_url}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_base_url}}/api/orders",
+							"host": [
+								"{{api_base_url}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_base_url}}/api/orders/5",
+							"host": [
+								"{{api_base_url}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{admin_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{api_base_url}}/api/products",
+					"host": [
+						"{{api_base_url}}"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{api_base_url}}/api/token?username=user&password=12345678",
+					"host": [
+						"{{api_base_url}}"
+					],
+					"path": [
+						"api",
+						"token"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "admin",
+							"description": "example admin username",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "1a2b3c4d",
+							"description": "example admin password",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"description": "example user username"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"description": "example user password"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products By Category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{admin_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_base_url}}/api/products-by-category/1",
+					"host": [
+						"{{api_base_url}}"
+					],
+					"path": [
+						"api",
+						"products-by-category",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_base_url}}/api/products/1",
+					"host": [
+						"{{api_base_url}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{admin_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"minu\",\n    \"price\": 5,\n    \"stock_quantity\": 1,\n    \"category\": [1, 4]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_base_url}}/api/products",
+					"host": [
+						"{{api_base_url}}"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{admin_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Product 1\",\n    \"price\": 7,\n    \"stock_quantity\": 2,\n    \"category\": [1]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_base_url}}/api/products/1",
+					"host": [
+						"{{api_base_url}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{admin_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{api_base_url}}/api/products/52",
+					"host": [
+						"{{api_base_url}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"52"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
